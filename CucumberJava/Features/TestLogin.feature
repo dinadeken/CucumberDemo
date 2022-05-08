@@ -27,3 +27,15 @@ Feature: Login Action
     And User enters  "tomsmith" and "SuperSecretPassword!"
     Then Message displayed login successfully
     
+    Scenario: Wrong username 
+    Given User in Login page
+    When User view login page successfully
+    And User enters  "wrongUser" and "SuperSecretPassword!"
+    Then Message displayed your username is invalid
+    
+    Scenario: Wrong Password 
+    Given User in Login page
+    When User view login page successfully
+    And User enters  "tomsmith" and "WrongPassword"
+    Then Message displayed your password is invalid
+    
